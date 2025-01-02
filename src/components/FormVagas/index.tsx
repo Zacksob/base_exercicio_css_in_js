@@ -1,31 +1,33 @@
-import { FormEvent, useState } from 'react'
+import React, { useState } from 'react'
+import { FormVagasContainer, Campo, BotaoPesquisar } from './FormVagas.module'
 
-import styles from './FormVagas.module.css'
-
-type Props = {
+interface FormVagasProps {
   aoPesquisar: (termo: string) => void
 }
 
-const FormVagas = ({ aoPesquisar }: Props) => {
-  const [termo, setTermo] = useState<string>('')
+const FormVagas: React.FC<FormVagasProps> = ({ aoPesquisar }) => {
+  const [termo, setTermo] = useState('')
 
-  const aoEnviarForm = (e: FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTermo(e.target.value)
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    aoPesquisar(termo.toLocaleLowerCase())
+    aoPesquisar(termo)
   }
 
   return (
-    <form className={styles.form} onSubmit={aoEnviarForm}>
-      <input
-        className={styles.campo}
-        placeholder="Front-end, fullstack, node, design"
-        onChange={(e) => setTermo(e.target.value)}
-        type="search"
+    <FormVagasContainer onSubmit={handleSubmit}>
+      <Campo
+        type="text"
+        value={termo}
+        onChange={handleChange}
+        placeholder="Pesquisar vaga"
       />
-      <button className={styles.btnPesquisar} type="submit">
-        Pesquisar
-      </button>
-    </form>
+      <BotaoPesquisar type="submit">Pesquisar</BotaoPesquisar>
+    </FormVagasContainer>
   )
 }
+
 export default FormVagas
