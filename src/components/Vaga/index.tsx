@@ -23,6 +23,7 @@ const VagaContainer = styled.div`
 const VagaTitulo = styled.h2`
   font-weight: bold;
   margin-bottom: 16px;
+  font-size: 1.17em;
 `
 
 const VagaLink = styled.a`
@@ -69,7 +70,7 @@ const Vaga = ({
       Salário: R${salarioMin} - R${salarioMax}
     </p>
     <p>Requisitos: {requisitos.join(', ')}</p>
-    <VagaLink href="#">Ver detalhes</VagaLink>
+    <VagaLink href="#">Ver detalhes e candidatar-se</VagaLink>
   </VagaContainer>
 )
 

@@ -8,6 +8,7 @@ const FormContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center; /* Centra horizontalmente */
 
   @media (max-width: 768px) {
     height: auto;
@@ -32,8 +33,8 @@ const ContentWrapper = styled.div`
 `
 
 const HeroTitle = styled.h1`
-  font-family: 'Gloock', serif;
   font-size: 48px;
+  font-family: Gloock, serif;
 
   @media (max-width: 768px) {
     font-size: 32px;
@@ -43,7 +44,9 @@ const HeroTitle = styled.h1`
 const HeroForm = () => (
   <FormContainer>
     <ContentWrapper>
-      <HeroTitle>Encontre sua vaga ideal</HeroTitle>
+      <HeroTitle>
+        As melhores vagas para tecnologia, design e artes visuais.
+      </HeroTitle>
     </ContentWrapper>
   </FormContainer>
 )

@@ -23,7 +23,7 @@ const FormVagas: React.FC<FormVagasProps> = ({ aoPesquisar }) => {
         type="text"
         value={termo}
         onChange={handleChange}
-        placeholder="Pesquisar vaga"
+        placeholder="Front-end, fullstack, node, design"
       />
       <BotaoPesquisar type="submit">Pesquisar</BotaoPesquisar>
     </FormVagasContainer>
